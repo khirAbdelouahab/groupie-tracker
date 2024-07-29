@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+<body>
+    <header>
+        <div id="left-header">
+            <span id="left-header-text">FAKE Artists</span>
+        </div>
+        <div>
+            <ul>
+                <li><a href="http://localhost:8080/Profile?id=">TEST</a></li>
+                <li><a href="http://">TEST</a></li>
+                <li><a href="http://">TEST</a></li>
+                <li><a href="http://">TEST</a></li>
+
+            </ul>
+        </div>
+    </header>
+    <article>
+        <h1>{{.Name}}</h1>
+        <ul>
+            {{range .Members}}
+                <li>{{.}}</li>
+            {{end}}
+        </ul>
+    </article>
+</body>
+</html>

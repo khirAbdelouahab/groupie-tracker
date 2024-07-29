@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artists</title>
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div id="left-header">
+            <span id="left-header-text">FAKE Artists</span>
+        </div>
+        <div>
+            <ul>
+                <li><a href="http://localhost:8080/Profile?id=">TEST</a></li>
+                <li><a href="http://">TEST</a></li>
+                <li><a href="http://">TEST</a></li>
+                <li><a href="http://">TEST</a></li>
+            </ul>
+        </div>
+    </header>
+    <article class="container">
+        {{range .Artists}}
+        <div class="sub-container">
+            <div class="img-container">
+                <img src="{{.Image}}" alt="can't Download this picture" srcset="">
+            </div>
+            <div class="info-container">
+                <h4>{{ .Name }}</h4>
+            </div>
+            <a href="http://localhost:8080/Profile?id={{.ID}}">View</a>
+        </div>
+        {{end}}
+    </article>
+   
+</body>
+</html>

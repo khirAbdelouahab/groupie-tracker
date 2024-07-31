@@ -49,8 +49,11 @@ func HandleProfile(w http.ResponseWriter, r *http.Request){
 	temp.Execute(w,profileinfo)
 }
 func main(){
-	fmt.Println(groupietrackerdata.GetArtistRelation(1))
-	http.Handle("/styles/style.css", http.FileServer(http.Dir("./")))
+	fmt.Println(groupietrackerdata.GetArtistRelation(2))
+	//./assets/style/style.css
+	//http.Handle("/assets/", http.StripPrefix("/assets/", http.FileServer(http.Dir("assets"))))
+
+	http.Handle("/assets/", http.StripPrefix("/assets/", http.FileServer(http.Dir("./assets"))))
 	http.HandleFunc("/",func(w http.ResponseWriter, r *http.Request) {
 		temp,err := template.ParseFiles("./Pages/Artists.html")
 		if err != nil {
@@ -63,5 +66,5 @@ func main(){
 		temp.Execute(w,data)
 	})
 	http.HandleFunc("/Profile",HandleProfile)
-	http.ListenAndServe(":8080",nil)
+	http.ListenAndServe(":8081",nil)
 }

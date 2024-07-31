@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile</title>
-    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="/assets/style/style.css">
 </head>
 <body>
     <header>
@@ -13,7 +13,7 @@
         </div>
         <div>
             <ul>
-                <li><a href="http://localhost:8080/Profile?id=">TEST</a></li>
+                <li><a href="/Profile?id=">TEST</a></li>
                 <li><a href="http://">TEST</a></li>
                 <li><a href="http://">TEST</a></li>
                 <li><a href="http://">TEST</a></li>
@@ -21,13 +21,32 @@
             </ul>
         </div>
     </header>
-    <article>
+    <article class="artist-info">
+        <img id="profile-img" src="{{.Image}}" alt="" srcset="">
         <h1>{{.Name}}</h1>
-        <ul>
+        <div>
+            <span>Creation Date</span>
+            <span>{{.CreationDate}}</span>
+        </div>
+        <div>
+            <span>First Album</span>
+            <span>{{.FirstAlbum}}</span>
+        </div>
+    </article>
+    <article class="Members">
+        <h1>Members</h1>
+
+        <div class="members-container">
             {{range .Members}}
-                <li>{{.}}</li>
+                <div class="member">
+                    <div class="member-img"><img src="./assets/images/member.png" alt="" srcset=""></div>
+                    <div class="member-info">
+                        <h3>{{.}}</h3>
+                    </div>
+                </div>
+
             {{end}}
-        </ul>
+        </div>
     </article>
 </body>
 </html>
